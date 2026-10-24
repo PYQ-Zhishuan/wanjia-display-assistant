@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>门店美术陈列助手 · 三步试摆</title><link rel="stylesheet" href="simple.css"></head>
+<body class="visual-mode">
+<header><a class="brand" href="#" aria-label="门店美术陈列助手首页"><span class="brand-mark">▦</span><span>美术陈列助手<small>把一组摆好，再把整组重复</small></span></a><button class="quiet" id="help-open">模板说明</button></header>
+<main>
+<nav class="steps-nav" aria-label="试摆步骤"><button data-step="1" class="active"><b>1</b><span>选商品</span></button><i></i><button data-step="2"><b>2</b><span>选位置<small>可跳过</small></span></button><i></i><button data-step="3"><b>3</b><span>看摆法</span></button></nav>
+<section id="step-1" class="page" aria-labelledby="title-1">
+<div class="page-heading"><p class="eyebrow">01 / 商品</p><h1 id="title-1" tabindex="-1">选商品</h1><p>先选最像的外形，再看着实物拖动大小。</p></div>
+<div class="product-layout"><div class="picker">
+<div class="category-tabs" id="categories"><button data-category="fresh"><span id="fresh-icon"></span><strong>生鲜</strong><small>果蔬 · 成束 · 小果盒</small></button><button data-category="packaged" class="active"><span id="packaged-icon"></span><strong>包装商品</strong><small>盒 · 瓶 · 罐 · 袋 · 箱</small></button></div>
+<div class="search-row"><label class="search"><span>⌕</span><input id="template-search" aria-label="查找商品模板" placeholder="也可搜索：纸巾、饮料、苹果…"></label><button class="quiet" id="photo-open">＋ 照片参考</button></div>
+<div id="template-options" class="template-options"></div>
+<p class="muted small">选外形会替换当前这款商品。模板大小是参考，可按实物调整。</p>
+</div>
+<aside class="editor panel">
+<div class="section-heading"><h2>这款大概多大？</h2><span id="active-badge" class="badge">A款</span></div>
+<div id="chosen" class="chosen"></div>
+<div class="adjust-body"><div class="model-side"><div id="model" class="model"></div><label class="range-label" for="size-width"><span>窄一点 <span aria-hidden="true">↔</span> 宽一点</span><output id="width-value"></output></label><input id="size-width" aria-label="商品宽窄" type="range" min="50" max="150" step="5"></div><div class="height-slider"><span>高</span><input id="size-height" aria-label="商品高矮" type="range" min="50" max="150" step="5"><span>矮</span><output id="height-value"></output></div></div>
+<div id="depth-row" class="depth-row"><label class="range-label" for="size-depth"><span>薄一点 ↔ 厚一点</span><output id="depth-value"></output></label><input id="size-depth" aria-label="商品前后深度" type="range" min="50" max="150" step="5"></div>
+<p id="dimension-note" class="muted small"></p>
+<details class="optional"><summary>改名称、颜色或承托状态</summary><label class="rename">商品名称<input id="product-name" maxlength="30"></label><div id="colors" class="colors"></div><label class="check"><input type="checkbox" id="stand" checked>这款在当前摆放方向能放稳</label></details>
+<div class="product-actions"><button class="quiet" id="add-product">＋ 再加一款</button><button class="text-button" id="remove">移除这款</button></div>
+</aside></div>
+</section>
+<section id="step-2" class="page" aria-labelledby="title-2" hidden>
+<div class="page-heading"><p class="eyebrow">02 / 位置 · 可选</p><h1 id="title-2" tabindex="-1">选位置</h1><p>选一块实际可用的区域。还没定位置，也可以直接看摆法。</p></div>
+<div id="scene-options" class="scene-options"></div>
+<div id="environment-editor" class="panel environment-editor" hidden><div><div class="section-heading"><h2 id="scene-title"></h2><span class="badge">只看这一层</span></div><div id="scene-diagram"></div></div><div class="scene-sliders"><h3>看着场地，拖到差不多</h3><label class="range-label" for="space"><span>左右能摆多宽</span><output id="space-value"></output></label><input id="space" type="range" min="30" max="240" step="5"><label class="range-label" for="scene-depth"><span>前后能摆多深</span><output id="scene-depth-value"></output></label><input id="scene-depth" type="range" min="20" max="120" step="5"><label class="range-label" for="scene-height"><span>上方有多少净空</span><output id="scene-height-value"></output></label><input id="scene-height" type="range" min="15" max="120" step="5"><p id="scene-note" class="muted small"></p></div></div>
+<button class="skip-card" id="skip-environment"><span class="skip-symbol">→</span><span><strong>先跳过，看看能怎么摆</strong><small>只看组合样式，不判断场地是否放得下</small></span></button>
+</section>
+<section id="step-3" class="page" aria-labelledby="title-3" hidden>
+<div class="page-heading result-heading"><div><p class="eyebrow">03 / 摆法</p><h1 id="title-3" tabindex="-1">看摆法</h1><p id="result-context"></p></div><button class="quiet" id="edit-products">修改商品</button></div>
+<div class="panel repetition-panel"><h2>整组重复几次？</h2><div id="count-controls"></div><details id="order-settings" class="optional"><summary>多款商品的组合顺序</summary><div id="order-options" class="order-options"></div></details></div>
+<div class="composition-bar"><span>整体排法</span><div id="composition-options"></div></div>
+<div class="result-layout"><div class="result-main">
+<div class="panel preview"><div class="section-heading"><div><span class="badge" id="recommend-tag">推荐摆法</span><h2 id="plan-heading"></h2></div><div class="preview-switches"><div class="view-switch"><button data-zoom="unit">看一组</button><button data-zoom="all" class="active">看整体</button></div><div class="view-switch"><button data-view="front" class="active">正面</button><button data-view="top">俯视</button></div></div></div><p id="reason" class="muted"></p><div id="diagram"></div><div id="group-sequence"></div><p id="counts" class="counts"></p><div class="status-wrap"><p id="status" role="status"></p><button class="quiet" id="fit" hidden>缩小分组，试着放下</button></div><div id="stack-check" class="stack-check" hidden><label class="check"><input id="stack-confirm" type="checkbox">已现场确认包装可叠放、层间支撑及拿取稳定</label><small>勾选仅记录现场确认，不代表程序验证了承重。</small></div></div>
+<div class="panel howto"><h2>照着这三步摆</h2><div id="instruction-cards" class="instruction-cards"></div><p id="shape-tip"></p></div>
+</div><aside class="result-settings">
+<div class="panel"><div class="section-heading"><h2>换一种摆法</h2><span id="motif-count" class="muted small"></span></div><div id="motif-options" class="motif-options"></div><p class="muted small">整齐有序优先：固定角度、统一间距、前沿排齐。每组只放同一款。</p></div>
+</aside></div>
+<div class="toolbar"><button class="quiet" id="print">打印摆放图</button><button class="quiet" id="save">保存方案</button><label class="quiet file-button" for="import">读取方案<input id="import" type="file" accept=".json"></label><button class="quiet" id="toggle-notes" aria-expanded="false">查看说明</button><button class="text-button" id="reset">重新试一套</button></div>
+<p class="boundary">这是基于参考外形的试摆图。场地尺寸、拿取、承托、承重和商品储存条件，请按实物与门店现行要求确认。图中的留缝是演示参数。</p>
+</section>
+</main>
+<div class="bottom-nav"><button id="back" class="quiet" hidden>← 上一步</button><span id="progress-note">先选外形，再拖动大小</span><button id="next" class="primary">下一步：选位置 →</button></div>
+<dialog id="help"><div class="section-heading"><h2>模板与摆法说明</h2><button class="quiet" data-close="help">关闭</button></div><p>商品外形 → 可选场地 → 筛选有限摆法 → 重复整组。它是一套可解释的模板规则，不是自动设计或照片识别。</p><p>纸巾同向错位、箱装横竖交替、六瓶对称三角组、圆罐对称阶梯来自本次讨论的演示样式，尚未经过门店实测。新模板尺寸为示意估值；带来源的包装仅代表那一个参考实例。</p><p>场地默认尺寸也是示意基底。边角柜只估算其中可用的矩形区域；货架与端架只看一层。生鲜图中的筐边是提示，不含真实托盘壁厚与储存设施。</p><div id="sources"></div></dialog>
+<dialog id="photos"><div class="section-heading"><h2>放一张实物照片作对照</h2><button class="quiet" data-close="photos">关闭</button></div><p>照片只在本机显示。先对照照片选外形、调大小；本版不自动识别尺寸。</p><label class="upload-zone" for="photo-file">＋ 选择商品照片<input id="photo-file" type="file" accept="image/jpeg,image/png,image/webp"></label><img id="photo" alt="当前商品参考照片" hidden><button class="quiet" id="photo-clear">清除照片</button></dialog>
+<div id="toast" role="status" hidden></div>
+<script src="templates.js"></script><script src="simple.js"></script>
+</body></html>
+

@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>门店美术陈列助手 · 三步试摆</title><style>
+*{box-sizing:border-box} :root{--ink:#263e35;--muted:#768176;--green:#3f6653;--light:#edf2e8;--line:#dde3d8;--paper:#fbfcf8;--amber:#ad7645}body{margin:0;background:#f6f7f2;color:var(--ink);font:14px/1.6 "Microsoft YaHei","PingFang SC",sans-serif}button,input{font:inherit}button,a,label.file-button{ -webkit-tap-highlight-color:transparent}button{border:0;cursor:pointer;color:inherit}button:disabled{opacity:.38;cursor:default}button:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #b89558;outline-offset:3px}h1,h2,h3,p{margin:0}h1{font-size:30px;line-height:1.35;font-weight:650;letter-spacing:.02em}h2{font-size:17px;line-height:1.5}h3{font-size:14px}small,.small{font-size:12px}.muted{color:var(--muted)}header{max-width:1320px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:20px 32px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none;font-size:18px;font-weight:600}.brand-mark{background:var(--green);color:#f6f5e5;border-radius:12px;width:42px;height:42px;text-align:center;font-size:29px;font-weight:400;line-height:40px}.brand small{display:block;font-size:10px;color:var(--muted);font-weight:400;letter-spacing:.08em}.quiet,.file-button{background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 14px;font-size:12px;white-space:nowrap}.primary{background:var(--green);color:white;border-radius:9px;padding:12px 24px;font-weight:600}.text-button{background:transparent;color:var(--muted);font-size:12px;padding:8px}.badge{display:inline-block;background:var(--light);color:var(--green);padding:3px 9px;border-radius:5px;font-size:11px;white-space:nowrap}main{max-width:1180px;padding:25px 28px 120px;margin:auto}.steps-nav{display:flex;align-items:center;max-width:640px;margin:0 auto 32px}.steps-nav button{display:flex;align-items:center;gap:9px;background:none;color:#96a08f;padding:6px}.steps-nav b{display:grid;place-items:center;background:#e9ede3;width:29px;height:29px;border-radius:50%;font-size:13px}.steps-nav span{font-size:13px;white-space:nowrap}.steps-nav small{font-size:10px;margin-left:4px}.steps-nav .active{color:var(--green);font-weight:600}.steps-nav .active b{background:var(--green);color:white}.steps-nav .done b{background:#dbe8d5;color:var(--green)}.steps-nav i{height:1px;flex:1;background:var(--line);margin:0 12px}.page-heading{margin:0 0 24px}.page-heading>p:last-child,.page-heading>div>p:last-child{color:var(--muted);margin-top:9px;font-size:13px}.eyebrow{font-size:11px;color:var(--green);letter-spacing:.16em;margin-bottom:8px}.product-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.8fr);gap:24px;align-items:start}.panel{padding:23px;background:white;border:1px solid var(--line);border-radius:16px}.category-tabs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}.category-tabs button{display:grid;grid-template-columns:70px 1fr;grid-template-rows:1fr 1fr;text-align:left;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px}.category-tabs button>span{grid-row:span 2;height:55px}.category-tabs svg{width:65px;height:55px}.category-tabs strong{align-self:end;font-size:16px}.category-tabs small{align-self:start;color:var(--muted);font-size:10px}.category-tabs .active{background:#eaf1e4;border-color:#75936c;box-shadow:inset 0 0 0 1px #75936c}.search-row{display:flex;gap:10px;margin-bottom:14px}.search{display:flex;gap:8px;align-items:center;flex:1;min-width:0;background:#fff;border:1px solid var(--line);border-radius:9px;padding:7px 12px}.search>span{font-size:23px;color:#889782;line-height:1}.search input{width:100%;min-width:0;background:transparent;border:0;outline:none;font-size:12px;color:var(--ink);padding:3px}.template-options{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:13px}.template-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 6px 11px;text-align:center;transition:border-color .15s}.template-card:hover{border-color:#88a578}.template-card.selected{background:#edf3e7;border:2px solid #6d8c61;padding:12px 5px 10px}.template-card.selected:after{content:'✓';position:absolute;top:5px;right:8px;color:var(--green);font-size:12px}.template-card svg{width:100%;height:66px;display:block}.template-card strong{display:block;font-size:13px;margin:7px 0 3px}.template-card small{font-size:9px;display:block;color:var(--muted);line-height:1.5}.empty{grid-column:1/-1;padding:25px;border:1px dashed var(--line);border-radius:10px}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}.chosen{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}.chosen button{border:1px solid var(--line);background:white;border-radius:7px;padding:5px 8px;font-size:11px}.chosen button.active{color:white;background:var(--green);border-color:var(--green)}.chosen i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px}.adjust-body{display:flex;align-items:center;justify-content:center;gap:17px;background:var(--paper);border-radius:10px;padding:16px 12px}.model-side{width:220px;min-width:0}.model{height:170px;display:grid;place-items:center}.model svg{width:100%;height:100%}.range-label{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:11px;align-items:center}output{color:var(--green);font-size:11px;white-space:nowrap;font-weight:600}input[type=range]{accent-color:var(--green);width:100%;height:23px;margin:6px 0 0;cursor:grab}.height-slider{display:flex;flex-direction:column;align-items:center;font-size:11px;color:var(--muted);gap:4px}.height-slider input{writing-mode:vertical-lr;direction:rtl;height:140px;width:22px}.height-slider output{font-size:10px}.depth-row{padding:15px 10px 2px}.editor>.small{margin:10px 0}.optional{border-top:1px solid var(--line);padding-top:13px;margin-top:14px;font-size:12px;color:var(--muted)}summary{cursor:pointer}.rename{display:block;margin:12px 0}.rename input{display:block;width:100%;border:1px solid var(--line);border-radius:7px;padding:7px;margin-top:5px}.colors{display:flex;gap:12px;margin:14px 0}.colors button{width:22px;height:22px;border-radius:50%;border:2px solid white;outline:1px solid #d1d7ca}.colors .active{outline:2px solid var(--green)}.check{display:flex;gap:8px;align-items:flex-start;font-size:12px}.check input{accent-color:var(--green);margin:4px 0 0}.product-actions{display:flex;justify-content:space-between;gap:10px;padding-top:18px;margin-top:17px;border-top:1px solid var(--line)}.scene-options{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.scene-card{background:white;border:1px solid var(--line);border-radius:14px;padding:18px 12px}.scene-card svg{width:100%;height:115px;display:block}.scene-card strong{display:block;font-size:17px;margin-top:8px}.scene-card small{color:var(--muted);font-size:11px}.scene-card.active{background:#edf3e7;border:2px solid #6d8c61;padding:17px 11px}.environment-editor{display:grid;grid-template-columns:1fr 1fr;gap:35px;margin-top:22px}.environment-editor svg{width:100%;height:250px}.scene-sliders h3{margin-bottom:22px}.scene-sliders .range-label{margin-top:15px}.scene-sliders p{margin-top:14px}.skip-card{display:flex;align-items:center;gap:18px;width:100%;padding:22px;text-align:left;border:1px dashed #a9b69c;background:#f0f4e9;border-radius:12px;margin-top:22px}.skip-symbol{display:grid;place-items:center;width:42px;height:42px;border:1px solid #a9b69c;border-radius:50%;font-size:22px;color:var(--green)}.skip-card strong{font-size:14px;display:block}.skip-card small{display:block;color:var(--muted);margin-top:4px;font-size:11px}.result-heading{display:flex;justify-content:space-between;align-items:center;gap:15px}.result-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;align-items:start}.result-settings{display:grid;gap:18px}.preview .section-heading{align-items:flex-start;margin-bottom:10px}.preview h2{font-size:24px;margin-top:7px}#reason{font-size:12px;margin-bottom:16px}.view-switch{display:flex;gap:3px;background:#f1f4ec;padding:3px;border-radius:7px}.view-switch button{font-size:11px;background:none;padding:5px 9px;border-radius:5px;white-space:nowrap}.view-switch .active{background:white;box-shadow:0 1px 4px #223d2910}#diagram{background:#f7f8f2;border-radius:12px;overflow:hidden}#diagram svg{display:block;width:100%}#group-sequence{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;margin:14px 0 9px}#group-sequence small{font-size:10px;color:var(--muted);margin-right:5px}#group-sequence span{background:#f7f9f2;border:1px solid var(--line);border-radius:5px;padding:3px 10px;font-size:11px}#group-sequence i{display:inline-block;width:7px;height:7px;border-radius:2px;margin-right:4px}.counts{text-align:center;font-size:11px;color:var(--muted);margin-bottom:16px}.status-wrap{background:#edf4e6;padding:13px 15px;border-radius:9px;color:#506d42;font-size:12px}.status-wrap:has(.warn){background:#fbf1e3;color:#906034}.status-wrap button{margin-top:10px;border-color:#ddc6a4}.stack-check{padding:14px;background:#faf4e8;border-radius:8px;margin-top:12px}.stack-check small{display:block;margin:7px 0 0 22px;color:var(--muted);font-size:10px}.motif-options{display:grid;gap:10px}.motif-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;gap:12px;padding:12px;text-align:left}.motif-card>span{min-width:0}.motif-card svg{width:68px;height:46px;flex-shrink:0}.motif-card strong{font-size:13px;display:block}.motif-card small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.motif-card.active{border-color:#78956c;background:#ecf2e5;box-shadow:inset 0 0 0 1px #78956c}.result-settings .small{margin-top:14px}.count-control{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:12px;gap:10px}.count-control small{display:block;font-size:9px;color:var(--muted)}.counter{display:flex;gap:10px;align-items:center}.counter button{width:29px;height:29px;background:var(--light);border:1px solid var(--line);border-radius:6px;font-size:19px;line-height:1}.counter output{min-width:29px;text-align:center}.order-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.order-options button{padding:8px;background:var(--paper);border:1px solid var(--line);border-radius:7px;font-size:10px}.order-options .active{color:var(--green);border-color:var(--green);background:var(--light)}.howto{margin-top:20px}.instruction-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}.instruction-card svg{height:60px;width:100%;display:block}.instruction-card b{font-size:12px;display:block;margin:10px 0 5px}.instruction-card p{font-size:11px;color:var(--muted)}#shape-tip{background:var(--paper);padding:13px;border-radius:8px;font-size:11px;color:#647455;margin-top:18px}.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.boundary{font-size:10px;color:var(--muted);line-height:1.8;margin-top:15px;max-width:850px}.file-button{cursor:pointer}.file-button input,.upload-zone input{display:none}.bottom-nav{position:fixed;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:20px;border-top:1px solid var(--line);background:#fcfdf9f2;backdrop-filter:blur(8px);padding:14px 24px;z-index:3}.bottom-nav>span{font-size:12px;color:var(--muted);max-width:350px;flex:1}dialog{width:min(720px,92vw);max-height:85vh;border:1px solid var(--line);border-radius:16px;padding:26px;color:var(--ink)}dialog::backdrop{background:#203c3066}dialog p{font-size:12px;color:var(--muted);margin:15px 0;line-height:1.8}.source{border-top:1px solid var(--line);padding:15px 0}.source h3{font-size:13px}.source small,.source a{font-size:11px;color:var(--muted)}.source a{color:var(--green)}.upload-zone{display:block;padding:25px;border:1px dashed #a5b797;text-align:center;margin:20px 0;border-radius:10px;background:var(--paper);cursor:pointer}#photo{display:block;max-height:350px;max-width:100%;margin:auto auto 15px}#toast{position:fixed;bottom:95px;left:50%;transform:translateX(-50%);max-width:90vw;background:var(--green);color:white;border-radius:8px;padding:13px 20px;font-size:12px;z-index:10}[hidden]{display:none!important}
+@media(max-width:1000px){.template-options{grid-template-columns:repeat(3,1fr)}.product-layout{grid-template-columns:minmax(0,1fr) 300px;gap:18px}.category-tabs button{grid-template-columns:1fr;text-align:center}.category-tabs button>span{display:none}.result-layout{grid-template-columns:minmax(0,1fr) 260px}.panel{padding:20px}.scene-card small{font-size:10px}.instruction-cards{gap:12px}}
+@media(max-width:760px){header{padding:14px 18px}.brand{font-size:16px}.brand small{font-size:9px}.brand-mark{width:36px;height:36px;line-height:34px;font-size:25px}main{padding:19px 18px 110px}.steps-nav{margin-bottom:26px}.steps-nav span{font-size:12px}.steps-nav small{display:block;margin-left:0;font-size:9px;line-height:1.2}.steps-nav i{margin:0 5px}.steps-nav button{gap:6px;padding:2px}.steps-nav b{width:25px;height:25px;font-size:11px}.page-heading{margin-bottom:20px}h1{font-size:25px}.page-heading>p:last-child,.page-heading>div>p:last-child{font-size:11px}.product-layout{display:block}.category-tabs button{grid-template-columns:64px 1fr;text-align:left;padding:12px 8px}.category-tabs button>span{display:block}.category-tabs strong{font-size:14px}.category-tabs svg{width:58px}.category-tabs small{font-size:9px}.template-options{grid-template-columns:repeat(4,1fr);gap:8px}.template-card{padding:10px 4px}.template-card.selected{padding:9px 3px}.template-card svg{height:55px}.template-card strong{font-size:12px}.template-card small{font-size:8px}.search-row{gap:8px}.search-row .quiet{font-size:10px;padding:8px}.search input{font-size:11px}.editor{margin-top:22px}.adjust-body{padding:15px 28px;gap:30px}.model-side{width:270px}.model{height:160px}.scene-options{grid-template-columns:1fr 1fr;gap:12px}.scene-card{padding:13px 10px}.scene-card.active{padding:12px 9px}.scene-card svg{height:98px}.scene-card strong{font-size:15px}.environment-editor{grid-template-columns:1fr;gap:10px}.environment-editor svg{height:210px}.scene-sliders h3{margin-bottom:16px}.skip-card{padding:17px;gap:13px}.result-heading{align-items:start}.result-heading>.quiet{font-size:10px;padding:7px 9px;margin-top:22px}.result-layout{display:flex;flex-direction:column;gap:18px}.result-main,.result-settings{width:100%}.result-settings{grid-template-columns:1fr;gap:18px}.preview h2{font-size:22px}.preview{padding:19px 15px}.preview .section-heading{margin-bottom:8px}.counts{font-size:10px}.instruction-cards{gap:12px}.instruction-card b{font-size:11px}.instruction-card p{font-size:10px}.instruction-card svg{height:48px}.bottom-nav{padding:12px 16px;gap:10px}.bottom-nav .primary{font-size:12px;padding:11px 16px}.bottom-nav>span{font-size:10px}.bottom-nav .quiet{font-size:11px;padding:9px 12px}.howto{padding:20px 16px}.motif-options{grid-template-columns:1fr 1fr}.motif-card{padding:10px;display:block}.motif-card svg{width:100%;height:55px}.motif-card strong{margin-top:7px}.toolbar{gap:8px}.toolbar .quiet{font-size:11px;padding:8px 10px}dialog{padding:22px}}
+@media(max-width:380px){.template-options{grid-template-columns:repeat(3,1fr)}.category-tabs button{grid-template-columns:1fr;text-align:center}.category-tabs button>span{display:none}.brand small{display:none}.bottom-nav>span{display:none}.bottom-nav{justify-content:space-between}.adjust-body{padding:12px}.instruction-cards{gap:8px}}
+@media print{@page{size:A4 portrait;margin:12mm}body{background:#fff}header,.steps-nav,#step-1,#step-2,.bottom-nav,.result-settings,.toolbar,.result-heading>button,dialog,#toast,.view-switch,#fit,.stack-check{display:none!important}#step-3{display:block!important}main{padding:0}.result-layout{display:block}.panel{border:0;padding:10px 0}.preview{break-inside:avoid}.howto{break-inside:avoid}.page-heading{margin-bottom:10px}body{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+.preview-switches{display:grid;gap:7px;justify-items:end}@media print{.preview-switches{display:none}}
+.repetition-panel{margin-bottom:20px}.repetition-panel #count-controls{display:flex;gap:30px;flex-wrap:wrap}.repetition-panel .count-control{flex:1;min-width:220px;margin-top:14px}.repetition-panel .count-control:not(:first-child){border-left:1px solid var(--line);padding-left:25px}.repetition-panel:has(.count-control:only-child){display:flex;align-items:center;gap:35px;flex-wrap:wrap}.repetition-panel:has(.count-control:only-child) #count-controls{flex:1}.repetition-panel:has(.count-control:only-child) .count-control{margin:0}.repetition-panel details{flex-basis:100%;width:100%}@media(max-width:760px){.repetition-panel:has(.count-control:only-child){display:block}.repetition-panel:has(.count-control:only-child) .count-control{margin-top:15px}.repetition-panel #count-controls{display:block}.repetition-panel .count-control:not(:first-child){padding-left:0;border-left:0}}@media print{.repetition-panel{display:none!important}}
+.composition-bar{margin:0 0 20px;display:flex;gap:15px;align-items:center;flex-wrap:wrap}.composition-bar>span{font-size:12px;color:var(--muted)}#composition-options{display:flex;gap:9px;flex:1}#composition-options button{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:9px;padding:10px;font-size:12px}#composition-options button>span{font-size:20px;color:#8da37c}#composition-options .active{background:#e8efdf;border:2px solid #708f60;padding:9px}.compact-status{display:block;margin:10px auto 0;font-size:11px;background:#edf1e6;color:#69805a;padding:5px 12px;border-radius:20px}.compact-status.warn{color:#956131;background:#faf0df}.visual-mode:not(.show-notes) .brand small,.visual-mode:not(.show-notes) .eyebrow,.visual-mode:not(.show-notes) .page-heading p,.visual-mode:not(.show-notes) .picker>.small,.visual-mode:not(.show-notes) #dimension-note,.visual-mode:not(.show-notes) .scene-sliders>h3,.visual-mode:not(.show-notes) #scene-note,.visual-mode:not(.show-notes) .skip-card small,.visual-mode:not(.show-notes) #reason,.visual-mode:not(.show-notes) .howto,.visual-mode:not(.show-notes) .status-wrap,.visual-mode:not(.show-notes) .boundary,.visual-mode:not(.show-notes) .result-settings .small,.visual-mode:not(.show-notes) .motif-card small,.visual-mode:not(.show-notes) .count-control small,.visual-mode:not(.show-notes) #progress-note,.visual-mode:not(.show-notes) .stack-check small{display:none}.visual-mode #diagram{border:2px solid #96ad80;border-radius:13px;box-shadow:0 8px 22px #557a3b10}.visual-mode .preview{border:2px solid #c1d0b0;padding:20px}.visual-mode .preview .section-heading{margin-bottom:20px}.visual-mode .page-heading{margin-bottom:20px}.visual-mode .bottom-nav{justify-content:space-between}.visual-mode .repetition-panel:has(.count-control:only-child){padding:18px 23px}.visual-mode .steps-nav{margin-bottom:22px}.visual-mode .preview h2{font-size:24px}.visual-mode .result-heading>.quiet{margin-top:0}.visual-mode .counts{margin:12px 0 3px}.visual-mode .stack-check .check{font-size:10px}.visual-mode .motif-card strong{font-size:13px}.visual-mode .motif-card{padding:13px}.visual-mode .result-main .howto{margin-top:18px}@media(max-width:760px){.composition-bar{display:block} .composition-bar>span{display:none}#composition-options button{font-size:10px;padding:9px 5px;gap:5px}#composition-options .active{padding:8px 4px}#composition-options button>span{font-size:15px}.visual-mode .preview{padding:17px 12px}.visual-mode .page-heading{margin-bottom:18px}.visual-mode .repetition-panel{padding:18px}.visual-mode .preview h2{font-size:22px}.visual-mode:not(.show-notes) .scene-card small{display:none}}@media print{.composition-bar,.compact-status,#toggle-notes{display:none!important}.visual-mode .status-wrap{display:block!important}.visual-mode .howto{display:block!important}}
+body:has(#step-3:not([hidden])) .bottom-nav{position:static;backdrop-filter:none;background:transparent;border:0;max-width:1180px;margin:auto;padding-top:0;padding-bottom:24px}body:has(#step-3:not([hidden])) main{padding-bottom:25px}
+
+</style></head>
+<body class="visual-mode">
+<header><a class="brand" href="#" aria-label="门店美术陈列助手首页"><span class="brand-mark">▦</span><span>美术陈列助手<small>把一组摆好，再把整组重复</small></span></a><button class="quiet" id="help-open">模板说明</button></header>
+<main>
+<nav class="steps-nav" aria-label="试摆步骤"><button data-step="1" class="active"><b>1</b><span>选商品</span></button><i></i><button data-step="2"><b>2</b><span>选位置<small>可跳过</small></span></button><i></i><button data-step="3"><b>3</b><span>看摆法</span></button></nav>
+<section id="step-1" class="page" aria-labelledby="title-1">
+<div class="page-heading"><p class="eyebrow">01 / 商品</p><h1 id="title-1" tabindex="-1">选商品</h1><p>先选最像的外形，再看着实物拖动大小。</p></div>
+<div class="product-layout"><div class="picker">
+<div class="category-tabs" id="categories"><button data-category="fresh"><span id="fresh-icon"></span><strong>生鲜</strong><small>果蔬 · 成束 · 小果盒</small></button><button data-category="packaged" class="active"><span id="packaged-icon"></span><strong>包装商品</strong><small>盒 · 瓶 · 罐 · 袋 · 箱</small></button></div>
+<div class="search-row"><label class="search"><span>⌕</span><input id="template-search" aria-label="查找商品模板" placeholder="也可搜索：纸巾、饮料、苹果…"></label><button class="quiet" id="photo-open">＋ 照片参考</button></div>
+<div id="template-options" class="template-options"></div>
+<p class="muted small">选外形会替换当前这款商品。模板大小是参考，可按实物调整。</p>
+</div>
+<aside class="editor panel">
+<div class="section-heading"><h2>这款大概多大？</h2><span id="active-badge" class="badge">A款</span></div>
+<div id="chosen" class="chosen"></div>
+<div class="adjust-body"><div class="model-side"><div id="model" class="model"></div><label class="range-label" for="size-width"><span>窄一点 <span aria-hidden="true">↔</span> 宽一点</span><output id="width-value"></output></label><input id="size-width" aria-label="商品宽窄" type="range" min="50" max="150" step="5"></div><div class="height-slider"><span>高</span><input id="size-height" aria-label="商品高矮" type="range" min="50" max="150" step="5"><span>矮</span><output id="height-value"></output></div></div>
+<div id="depth-row" class="depth-row"><label class="range-label" for="size-depth"><span>薄一点 ↔ 厚一点</span><output id="depth-value"></output></label><input id="size-depth" aria-label="商品前后深度" type="range" min="50" max="150" step="5"></div>
+<p id="dimension-note" class="muted small"></p>
+<details class="optional"><summary>改名称、颜色或承托状态</summary><label class="rename">商品名称<input id="product-name" maxlength="30"></label><div id="colors" class="colors"></div><label class="check"><input type="checkbox" id="stand" checked>这款在当前摆放方向能放稳</label></details>
+<div class="product-actions"><button class="quiet" id="add-product">＋ 再加一款</button><button class="text-button" id="remove">移除这款</button></div>
+</aside></div>
+</section>
+<section id="step-2" class="page" aria-labelledby="title-2" hidden>
+<div class="page-heading"><p class="eyebrow">02 / 位置 · 可选</p><h1 id="title-2" tabindex="-1">选位置</h1><p>选一块实际可用的区域。还没定位置，也可以直接看摆法。</p></div>
+<div id="scene-options" class="scene-options"></div>
+<div id="environment-editor" class="panel environment-editor" hidden><div><div class="section-heading"><h2 id="scene-title"></h2><span class="badge">只看这一层</span></div><div id="scene-diagram"></div></div><div class="scene-sliders"><h3>看着场地，拖到差不多</h3><label class="range-label" for="space"><span>左右能摆多宽</span><output id="space-value"></output></label><input id="space" type="range" min="30" max="240" step="5"><label class="range-label" for="scene-depth"><span>前后能摆多深</span><output id="scene-depth-value"></output></label><input id="scene-depth" type="range" min="20" max="120" step="5"><label class="range-label" for="scene-height"><span>上方有多少净空</span><output id="scene-height-value"></output></label><input id="scene-height" type="range" min="15" max="120" step="5"><p id="scene-note" class="muted small"></p></div></div>
+<button class="skip-card" id="skip-environment"><span class="skip-symbol">→</span><span><strong>先跳过，看看能怎么摆</strong><small>只看组合样式，不判断场地是否放得下</small></span></button>
+</section>
+<section id="step-3" class="page" aria-labelledby="title-3" hidden>
+<div class="page-heading result-heading"><div><p class="eyebrow">03 / 摆法</p><h1 id="title-3" tabindex="-1">看摆法</h1><p id="result-context"></p></div><button class="quiet" id="edit-products">修改商品</button></div>
+<div class="panel repetition-panel"><h2>整组重复几次？</h2><div id="count-controls"></div><details id="order-settings" class="optional"><summary>多款商品的组合顺序</summary><div id="order-options" class="order-options"></div></details></div>
+<div class="composition-bar"><span>整体排法</span><div id="composition-options"></div></div>
+<div class="result-layout"><div class="result-main">
+<div class="panel preview"><div class="section-heading"><div><span class="badge" id="recommend-tag">推荐摆法</span><h2 id="plan-heading"></h2></div><div class="preview-switches"><div class="view-switch"><button data-zoom="unit">看一组</button><button data-zoom="all" class="active">看整体</button></div><div class="view-switch"><button data-view="front" class="active">正面</button><button data-view="top">俯视</button></div></div></div><p id="reason" class="muted"></p><div id="diagram"></div><div id="group-sequence"></div><p id="counts" class="counts"></p><div class="status-wrap"><p id="status" role="status"></p><button class="quiet" id="fit" hidden>缩小分组，试着放下</button></div><div id="stack-check" class="stack-check" hidden><label class="check"><input id="stack-confirm" type="checkbox">已现场确认包装可叠放、层间支撑及拿取稳定</label><small>勾选仅记录现场确认，不代表程序验证了承重。</small></div></div>
+<div class="panel howto"><h2>照着这三步摆</h2><div id="instruction-cards" class="instruction-cards"></div><p id="shape-tip"></p></div>
+</div><aside class="result-settings">
+<div class="panel"><div class="section-heading"><h2>换一种摆法</h2><span id="motif-count" class="muted small"></span></div><div id="motif-options" class="motif-options"></div><p class="muted small">整齐有序优先：固定角度、统一间距、前沿排齐。每组只放同一款。</p></div>
+</aside></div>
+<div class="toolbar"><button class="quiet" id="print">打印摆放图</button><button class="quiet" id="save">保存方案</button><label class="quiet file-button" for="import">读取方案<input id="import" type="file" accept=".json"></label><button class="quiet" id="toggle-notes" aria-expanded="false">查看说明</button><button class="text-button" id="reset">重新试一套</button></div>
+<p class="boundary">这是基于参考外形的试摆图。场地尺寸、拿取、承托、承重和商品储存条件，请按实物与门店现行要求确认。图中的留缝是演示参数。</p>
+</section>
+</main>
+<div class="bottom-nav"><button id="back" class="quiet" hidden>← 上一步</button><span id="progress-note">先选外形，再拖动大小</span><button id="next" class="primary">下一步：选位置 →</button></div>
+<dialog id="help"><div class="section-heading"><h2>模板与摆法说明</h2><button class="quiet" data-close="help">关闭</button></div><p>商品外形 → 可选场地 → 筛选有限摆法 → 重复整组。它是一套可解释的模板规则，不是自动设计或照片识别。</p><p>纸巾同向错位、箱装横竖交替、六瓶对称三角组、圆罐对称阶梯来自本次讨论的演示样式，尚未经过门店实测。新模板尺寸为示意估值；带来源的包装仅代表那一个参考实例。</p><p>场地默认尺寸也是示意基底。边角柜只估算其中可用的矩形区域；货架与端架只看一层。生鲜图中的筐边是提示，不含真实托盘壁厚与储存设施。</p><div id="sources"></div></dialog>
+<dialog id="photos"><div class="section-heading"><h2>放一张实物照片作对照</h2><button class="quiet" data-close="photos">关闭</button></div><p>照片只在本机显示。先对照照片选外形、调大小；本版不自动识别尺寸。</p><label class="upload-zone" for="photo-file">＋ 选择商品照片<input id="photo-file" type="file" accept="image/jpeg,image/png,image/webp"></label><img id="photo" alt="当前商品参考照片" hidden><button class="quiet" id="photo-clear">清除照片</button></dialog>
+<div id="toast" role="status" hidden></div>
+<script>
+(function(root){
+'use strict';
+const sources={
+ biscuit:{label:'IKEA KEX 单包装资料',url:'https://www.ikea.cn/cn/en/p/kex-biscuits-40129020/',detail:'资料列出包装13×19×6 cm。此处按大面直立建模为宽13、深6、高19 cm，朝向为演示选择。仅作盒装饼干参考。'},
+ bottle:{label:'Coca-Cola 土耳其官方包装问答',url:'https://merakettim.coca-colaturkiye.com/soru-detay/1-5-litrelik-sisenin-olculeri-capi-nedir--56790',detail:'2019年官方问答中的1.5 L PET瓶为高311 mm、直径94.5 mm。本版取约9.5×9.5×31 cm，地区和包装版本可能不同。'},
+ can:{label:'Crown 330 mL Standard 罐型',url:'https://www.crowncork.com/beverage-packaging/products/beverage-cans/113oz-330ml-standard',detail:'厂商公开罐型直径66 mm、高115.2 mm。本版取约6.6×6.6×11.5 cm。同容量也可能有不同罐型。'}
+};
+const templates=[
+ {key:'biscuit',category:'packaged',name:'盒装饼干',form:'盒形',example:'饼干 · 纸盒食品',aliases:'饼干 食品饼干 包装食品饼干 食品纸盒 盒装 cookie biscuit',shape:'box',width:13,depth:6,height:19,color:'#BC754C',tip:'包装大面朝前，盒子的边线排齐。'},
+ {key:'bottle',category:'packaged',name:'大瓶饮料',form:'瓶形',example:'大瓶饮料 · 1.5 L',aliases:'大瓶 饮料 大瓶可乐 可乐 汽水 1.5l 1.5升 1500ml bottle',shape:'bottle',width:9.5,depth:9.5,height:31,color:'#B35B4F',tip:'瓶身标识朝前，直立成组，不把瓶子叠高。'},
+ {key:'can',category:'packaged',name:'圆罐商品',form:'罐形',example:'罐头 · 易拉罐',aliases:'罐头 圆形罐头 易拉罐 罐装饮料 330ml 330毫升 罐装 can',shape:'can',width:6.6,depth:6.6,height:11.5,color:'#618679',tip:'罐身标签朝向一致，先排齐一组再重复。参考基底为330 mL标准饮料罐，罐头请按实物调整。'},
+ {key:'bag',category:'packaged',name:'自立零食袋',form:'袋形',example:'坚果 · 袋装零食',aliases:'坚果 零食 袋装 自立袋 袋装食品 软袋 果干 bag',shape:'bag',width:14,depth:7,height:23,color:'#C3A14E',tip:'袋子站不稳时先用承托，同款袋口和正面方向一致。'},
+ {key:'tissue',category:'packaged',name:'方袋纸巾',form:'软方包',example:'纸巾 · 方袋抽纸',aliases:'纸巾 抽纸 方袋纸巾 纸巾包 大方袋',shape:'softbox',width:20,depth:12,height:10,color:'#809BA0',tip:'外包装完整、底面平稳时再考虑错位露角，拿走上层后也要保持稳定。'},
+ {key:'carton',category:'packaged',name:'箱装饮料',form:'整箱形',example:'整箱饮料 · 纸箱',aliases:'箱装饮料 成箱饮料 整箱 饮料箱 纸箱',shape:'carton',width:30,depth:20,height:24,color:'#B79969',tip:'在低位台面用平面转向形成纹理，保留可识别的商品正面和价签。'},
+ {key:'cup',category:'packaged',name:'杯装食品',form:'杯形',example:'杯装零食 · 碗装食品',aliases:'杯装 碗装 杯子 泡面 方便面',shape:'cup',width:10,depth:10,height:11,color:'#927CA0',tip:'杯身朝向一致，按组排列；本示意不叠杯。'},
+ {key:'flatbox',category:'packaged',name:'扁盒食品',form:'扁盒形',example:'糕点盒 · 扁包装',aliases:'扁盒 糕点 包装托盘 礼盒',shape:'tray',width:20,depth:14,height:6,color:'#B69159',tip:'保留包装展示面，不遮住同组商品的信息。'},
+ {key:'apple',category:'fresh',name:'圆形果蔬',form:'球圆形',example:'苹果 · 橙子 · 番茄',aliases:'苹果 橙子 橘子 番茄 圆形水果 果蔬',shape:'round',width:8,depth:8,height:8,color:'#C86B50',tip:'散装圆果用适宜的浅筐或围挡分组，先试单层排列，避免滚落。'},
+ {key:'cucumber',category:'fresh',name:'长条果蔬',form:'长条形',example:'黄瓜 · 长茄子',aliases:'黄瓜 茄子 长条 玉米 胡萝卜',shape:'long',width:5,depth:24,height:5,color:'#769464',tip:'长条果蔬同向平放，以拿取方便的一端对齐。'},
+ {key:'leafy',category:'fresh',name:'成束叶菜',form:'叶束形',example:'小白菜 · 成束青菜',aliases:'叶菜 青菜 小白菜 菠菜 菜心 蔬菜',shape:'leafy',width:13,depth:25,height:9,color:'#678C62',tip:'叶菜按束同向平放，根部对齐；不为了图案压实或遮住叶面。'},
+ {key:'freshtray',category:'fresh',name:'盒装小果',form:'浅盒形',example:'草莓 · 蓝莓 · 小果盒',aliases:'草莓 蓝莓 小果 鲜果 盒装水果 小颗粒',shape:'fruittray',width:18,depth:12,height:7,color:'#A96D6D',tip:'以完整小果盒为一件分组，不挤压盒内果实；按商品要求使用相应陈列设施。'}
+];
+templates.forEach(t=>{if(!sources[t.key])sources[t.key]={label:'演示估值，待补门店实样',url:'',detail:t.width+'×'+t.depth+'×'+t.height+' cm为本项目示意基底，不是行业统一尺寸。'+(t.category==='fresh'?'生鲜个体大小与包装方式差异较大。':'')+'请按实物拖动修正。'};});
+const scenes=[
+ {key:'island',name:'堆头',hint:'独立台面 · 整组重复',width:120,depth:80,height:80},
+ {key:'endcap',name:'端架',hint:'面向通道 · 聚焦中部',width:90,depth:45,height:50},
+ {key:'corner',name:'边角柜',hint:'小区域 · 少款清晰',width:60,depth:40,height:45},
+ {key:'shelf',name:'货架',hint:'一层空间 · 前沿排齐',width:100,depth:40,height:40}
+];
+const patterns={blocks:{name:'同款成区',hint:'先摆一组，再整组复制'},alternate:{name:'整组交替',hint:'A组、B组交替出现'},focus:{name:'主推居中',hint:'A款在中间，两侧搭配'},height:{name:'高低呼应',hint:'高的在中间，低的在两侧'}};
+const motifs=[
+ {key:'grid',name:'整齐成组',summary:'同向排齐，整组重复',shapes:null,view:'front',stack:false},
+ {key:'offset',name:'错位露角',summary:'3包一组，每层错开一点',shapes:['softbox'],view:'front',stack:true},
+ {key:'pinwheel',name:'四件围合',summary:'四件首尾围合，再重复方形单元',shapes:['carton','box','tray','softbox'],view:'top',stack:false},
+ {key:'slant',name:'同角斜列',summary:'统一20°，等距错位成列',shapes:['carton','box','tray','softbox'],view:'top',stack:false},
+ {key:'diamond',name:'斜角连排',summary:'统一45°，沿直线等距连排',shapes:['carton','box','tray','softbox'],view:'top',stack:false},
+ {key:'texture',name:'横竖交替',summary:'横竖组成单元，每排同序重复',shapes:['carton'],view:'top',stack:false},
+ {key:'triangle',name:'六瓶三角组',summary:'前1、中2、后3，共6瓶',shapes:['bottle'],view:'top',stack:false},
+ {key:'pyramid',name:'圆罐阶梯',summary:'下3、中2、上1，共6罐',shapes:['can'],view:'front',stack:true}
+];
+const motif=key=>motifs.find(m=>m.key===key);
+const available=d=>motifs.filter(m=>!m.shapes||d.products.every(p=>m.shapes.includes(template(p.key).shape)));
+const round=n=>Math.round(n*10)/10;
+const template=key=>templates.find(t=>t.key===key);
+const circular=t=>['bottle','can','cup','round'].includes(t.shape);
+const make=(key,id='A')=>{const t=template(key);if(!t)throw Error('未知模板');return {id,key,name:t.name,width:t.width,depth:t.depth,height:t.height,color:t.color,stand:true};};
+function defaults(){return {version:3,products:[make('biscuit')],active:'A',columns:2,rows:2,repeat:3,pattern:'blocks',motif:'grid',composition:'repeat',stackConfirmed:false,environment:null,space:120,depth:80,height:80};}
+function search(q,category){const terms=String(q).toLowerCase().replace(/\s+/g,'');return templates.filter(t=>(!category||t.category===category)&&(!terms||(t.name+t.form+t.aliases).toLowerCase().replace(/\s+/g,'').includes(terms)||t.aliases.split(' ').some(a=>a.length>=2&&terms.includes(a))));}
+function validate(d){
+ if(!d||![2,3].includes(d.version)||!Array.isArray(d.products)||d.products.length<1||d.products.length>3)return '方案格式不正确：请选择1—3款商品。';
+ for(const [k,min,max] of [['columns',1,5],['rows',1,4],['repeat',1,3],['space',30,240],['depth',20,120],['height',15,120]])if(typeof d[k]!=='number'||!Number.isFinite(d[k])||d[k]<min||d[k]>max||(['columns','rows','repeat'].includes(k)&&!Number.isInteger(d[k])))return '方案参数超出小样范围。';
+ if(!Object.hasOwn(patterns,d.pattern))return '排布方式不正确。';
+ if(d.version===3&&(!motif(d.motif)||typeof d.stackConfirmed!=='boolean'))return '摆法模板不正确。';
+ if(d.composition!==undefined&&!['repeat','mirror','quad'].includes(d.composition))return '整体构图不正确。';
+ if(d.version===3&&d.environment!==null&&!scenes.some(s=>s.key===d.environment))return '陈列环境不正确。';
+ if(new Set(d.products.map(p=>p&&p.id)).size!==d.products.length)return '商品编号重复。';
+ for(const p of d.products){const t=p&&template(p.key);if(!t||!['A','B','C'].includes(p.id)||typeof p.name!=='string'||!p.name.trim()||p.name.length>30||!/^#[0-9a-f]{6}$/i.test(p.color)||typeof p.stand!=='boolean')return '商品模板资料不正确。';for(const k of ['width','depth','height'])if(typeof p[k]!=='number'||!Number.isFinite(p[k])||p[k]<t[k]*.5-.1||p[k]>t[k]*1.5+.1)return '商品调整幅度超出模板范围。';if(circular(t)&&Math.abs(p.width-p.depth)>.05)return '圆形商品的宽和深应一致。';}
+ if(d.version===3&&!available(d).some(m=>m.key===d.motif))return '这套摆法不适合当前商品外形。';
+ return '';
+}
+function normalize(d){const error=validate(d);if(error)throw Error(error);return {version:3,products:d.products.map((p,i)=>({...Object.fromEntries(['key','name','width','depth','height','color','stand'].map(k=>[k,p[k]])),id:'ABC'[i]})),active:'A',...Object.fromEntries(['columns','rows','repeat','pattern','space','depth','height'].map(k=>[k,d[k]])),motif:d.version===2?'grid':d.motif,composition:d.composition||'repeat',stackConfirmed:d.version===2?false:d.stackConfirmed,environment:d.version===2?'shelf':d.environment};}
+function recommend(d){
+ if(d.products.length===1)return {pattern:'blocks',reason:'只有一款商品，先把同款摆成一组，再重复，最容易做整齐。'};
+ if(d.products.some(p=>template(p.key).category==='fresh'))return {pattern:'blocks',reason:'生鲜先按同款分区，承托、价签和补货位置更清楚。'};
+ if(d.environment==='corner')return {pattern:'blocks',reason:'边角位置较小，同款集中成区，减少零碎交替。'};
+ const hs=d.products.map(p=>p.height);
+ if(Math.max(...hs)/Math.min(...hs)>=1.3)return {pattern:'height',reason:'这几款商品高矮差异明显，把高的放中间，用包装自身高度形成轮廓。'};
+ if(d.products.length===2)return {pattern:'alternate',reason:'两款商品高度接近，交替重复整组，容易形成清楚的节奏。'};
+ return {pattern:'focus',reason:'三款商品可以让A款居中作为主推，两侧用另外两款配合。'};
+}
+function recommendMotif(d){
+ const choices=available(d),special=choices.find(m=>m.key!=='grid');
+ if(!special)return {key:'grid',reason:'先将同款商品排成清楚的一组，再重复。多种外形混合时采用通用摆法。'};
+ if(d.environment){const us=d.products.map(p=>unit(p,{...d,motif:special.key}));if(us.reduce((n,u)=>n+u.span,0)+(us.length-1)*3+6>d.space||Math.max(...us.map(u=>u.usedDepth))+6>d.depth||Math.max(...us.map(u=>u.usedHeight))+3>d.height)return {key:'grid',reason:'当前场地放不下这类特色组合的完整一组，先用整齐成组，保持边界与前沿清楚。'};}
+ if(special.stack)return {key:special.key,reason:'保持相同错位幅度或对称层数，再整组重复；先核对包装可叠放、层间支撑和拿取稳定性。'};
+ return {key:special.key,reason:special.key==='triangle'?'瓶子直立、前1中2后3，围绕中线对称；以六瓶为单元向两侧整齐重复。':special.key==='pinwheel'?'四件按同一个方向首尾围合，组成清楚的方形单元；整组边界排齐后再重复。':'每排都按同一个横竖顺序摆放，前沿排齐、间距一致，用规则重复形成纹理。'};
+}
+function unit(p,d){
+ const gap=.8,mode=d.motif||'grid',items=[];
+ const add=(x,y,z=0,angle=0)=>{const a=angle*Math.PI/180,bw=round(Math.abs(p.width*Math.cos(a))+Math.abs(p.depth*Math.sin(a))),bd=round(Math.abs(p.depth*Math.cos(a))+Math.abs(p.width*Math.sin(a)));items.push({x:round(x),y:round(y),z:round(z),angle,bw,bd});};
+ if(mode==='triangle'){for(let r=0;r<3;r++)for(let c=0;c<=r;c++)add((2-r)*(p.width+gap)/2+c*(p.width+gap),r*(p.depth+gap));}
+ else if(mode==='pyramid'){for(let level=0;level<3;level++)for(let c=0;c<3-level;c++)add(level*(p.width+gap)/2+c*(p.width+gap),0,level*p.height);}
+ else if(mode==='offset'){for(let level=0;level<3;level++)add(level*p.width*.12,level*p.depth*.05,level*p.height);}
+ else if(mode==='texture'){const rowDepth=Math.max(p.width,p.depth)+gap;[90,0,90,0].forEach((angle,i)=>add(i%2?p.depth+gap:0,Math.floor(i/2)*rowDepth,0,angle));}
+ else if(mode==='pinwheel'){const long=Math.max(p.width,p.depth),short=Math.min(p.width,p.depth),a=p.width>=p.depth?0:90;add(0,0,0,a);add(long+gap,0,0,90-a);add(short+gap,long+gap,0,a);add(0,short+gap,0,90-a);}
+ else if(mode==='slant'||mode==='diamond'){const angle=mode==='slant'?20:45,r=angle*Math.PI/180,dx=mode==='slant'?p.width*.12:0,dy=(p.depth+gap+dx*Math.sin(r))/Math.cos(r);for(let i=0;i<4;i++)add(i*dx,i*dy,0,angle);}
+ else for(let r=0;r<d.rows;r++)for(let c=0;c<d.columns;c++)add(c*(p.width+gap),r*(p.depth+gap));
+ return {items,span:round(Math.max(...items.map(i=>i.x+i.bw))),usedDepth:round(Math.max(...items.map(i=>i.y+i.bd))),usedHeight:round(Math.max(...items.map(i=>i.z+p.height)))};
+}
+function layout(d){
+ const error=validate(d);if(error)return {error,items:[],groups:[]};
+ const ps=d.products.map(p=>({...p,shape:template(p.key).shape,category:template(p.key).category}));
+ const col=d.columns,rows=d.rows,repeat=d.repeat,gap=3,unitGap=.8,edge=3;
+ let sequence=[];
+ if(d.pattern==='alternate'){for(let r=0;r<repeat;r++)sequence.push(...ps);}
+ else if(d.pattern==='focus'){const main=ps[0],other=ps.slice(1).flatMap(p=>Array(repeat).fill(p)),split=Math.ceil(other.length/2);sequence=[...other.slice(0,split),...Array(repeat).fill(main),...other.slice(split)];}
+ else if(d.pattern==='height'){const sorted=ps.flatMap(p=>Array(repeat).fill(p)).sort((a,b)=>b.height-a.height);for(const [i,p]of sorted.entries())i%2?sequence.push(p):sequence.unshift(p);}
+ else sequence=ps.flatMap(p=>Array(repeat).fill(p));
+ let groups=sequence.map((p,i)=>({...p,group:i+1,...unit(p,d),flipX:false,flipY:false,groupRow:0}));
+ const comp=d.composition||'repeat';
+ if(comp!=='repeat')groups=[...groups,...groups.slice().reverse().map(g=>({...g,flipX:true}))];
+ const rowDepth=Math.max(...groups.map(g=>g.usedDepth));
+ const span=round(groups.reduce((s,g)=>s+g.span,0)+(groups.length-1)*gap),requiredWidth=round(span+edge*2),requiredDepth=round(rowDepth*(comp==='quad'?2:1)+(comp==='quad'?gap:0)+edge*2),requiredHeight=round(Math.max(...groups.map(g=>g.usedHeight))+edge);
+ if(comp==='quad')groups=[...groups,...groups.map(g=>({...g,flipY:true,groupRow:1}))];
+ const constrained=d.version===2||d.environment!==null;
+ let x=constrained?Math.max(edge,(d.space-span)/2):edge;const items=[];
+ const xStart=x;
+ for(const [gi,g]of groups.entries()){if(gi&&g.groupRow!==groups[gi-1].groupRow)x=xStart;g.group=gi+1;g.x=round(x);g.y=round(edge+g.groupRow*(rowDepth+gap));for(const [index,i]of g.items.entries()){const ix=g.flipX?g.span-i.x-i.bw:i.x,iy=g.flipY?rowDepth-i.y-i.bd:i.y;items.push({...g,...i,x:round(x+ix),y:round(g.y+iy),angle:(g.flipX?-i.angle:i.angle)*(g.flipY?-1:1),index});}x+=g.span+gap;}
+ const issues=[];
+ if(constrained&&requiredWidth>d.space)issues.push('按模板估算偏宽约'+round(requiredWidth-d.space)+' cm，减少横向列数或重复组数再试。');
+ if(constrained&&requiredDepth>d.depth)issues.push('向后摆得偏深，可减少向后排数。');
+ if(constrained&&requiredHeight>d.height)issues.push('商品高于参考净空，请核对实物或换位置。');
+ if(ps.some(p=>!p.stand))issues.push('有商品需要承托，先确认放稳再采用这套摆法。');
+ if(motif(d.motif||'grid').stack&&!d.stackConfirmed)issues.push('这是堆叠样式示意：包装能否叠放、层间支撑和拿取稳定性尚未确认。');
+ return {error:'',groups,items,span,requiredWidth,requiredDepth,requiredHeight,total:items.length,issues,constrained,tooWide:constrained&&requiredWidth>d.space,tooDeep:constrained&&requiredDepth>d.depth,sequence:groups.filter(g=>!g.groupRow).map(g=>g.id).join(' '),rowDepth,composition:comp,edge,gap,unitGap};
+}
+function fit(d){
+ if(!d.environment)return null;
+ // Keep all SKUs; look for a compact arrangement within the selected single-level area.
+ let best=null;
+ for(let columns=1;columns<=d.columns;columns++)for(let rows=1;rows<=d.rows;rows++)for(let repeat=1;repeat<=d.repeat;repeat++){
+  const candidate={...d,columns,rows,repeat},r=layout(candidate);
+  if(!r.error&&r.requiredWidth<=d.space&&r.requiredDepth<=d.depth&&r.requiredHeight<=d.height){const score=r.total*100+repeat*10-Math.abs(columns-d.columns);if(!best||score>best.score)best={columns,rows,repeat,score};}
+ }
+ return best&&{columns:best.columns,rows:best.rows,repeat:best.repeat};
+}
+const api={templates,sources,scenes,patterns,motifs,motif,available,recommendMotif,unit,template,circular,make,defaults,search,layout,validate,normalize,recommend,fit,round};
+if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.DisplayTemplates=api;
+})(typeof window!=='undefined'?window:globalThis);
+
+</script><script>
+'use strict';
+const T=DisplayTemplates,$=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let data=T.defaults(),step=1,category='packaged',view='front',zoom='all',photoUrl='',dirty=true;
+const colors=['#BC754C','#B35B4F','#618679','#C3A14E','#6789A0','#987D9D'];
+function toast(s){$('toast').textContent=s;$('toast').hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('toast').hidden=true,4000);}
+function active(){return data.products.find(p=>p.id===data.active)||data.products[0];}
+function svg(content,w=200,h=150,label=''){return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+w+' '+h+'" '+(label?'role="img" aria-label="'+esc(label)+'"':'aria-hidden="true"')+' style="font-family:Microsoft YaHei,sans-serif">'+content+'</svg>';}
+function shape(p,x,y,w,h,label='',top=false){
+ const c=p.color;let out='';
+ if(p.shape==='round')out='<ellipse cx="'+(x+w/2)+'" cy="'+(y+h*.53)+'" rx="'+(w/2)+'" ry="'+(h*.47)+'" fill="'+c+'"/><path d="M'+(x+w*.5)+','+(y+h*.14)+' q'+(w*.05)+','+(-h*.18)+' '+(w*.25)+','+(-h*.1)+' q'+(-w*.02)+','+(h*.18)+' '+(-w*.25)+','+(h*.1)+'" fill="#5d7b4f"/>';
+ else if(p.shape==='long')out='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="'+Math.min(w,h)*.45+'" fill="'+c+'"/><path d="M'+(x+w*.38)+','+(y+h*.15)+' L'+(x+w*.38)+','+(y+h*.85)+'" stroke="#b0c49b" stroke-width="'+Math.max(1,w*.05)+'"/>';
+ else if(p.shape==='leafy'){for(let i=0;i<4;i++)out+='<ellipse cx="'+(x+w*(.16+i*.22))+'" cy="'+(y+h*.43)+'" rx="'+(w*.17)+'" ry="'+(h*.42)+'" fill="'+(i%2?c:'#86a276')+'"/>';out+='<path d="M'+(x+w*.3)+','+(y+h*.6)+' L'+(x+w*.47)+','+(y+h)+' L'+(x+w*.67)+','+(y+h*.6)+'" fill="none" stroke="#bdcda5" stroke-width="'+w*.12+'"/>';}
+ else if(p.shape==='fruittray'){out='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="'+w*.08+'" fill="#dee5d5" stroke="#83947e" stroke-width="1"/>';for(let r=0;r<(top?2:1);r++)for(let c1=0;c1<3;c1++)out+='<ellipse cx="'+(x+w*(.2+c1*.3))+'" cy="'+(y+h*(top?.3+r*.4:.45))+'" rx="'+w*.11+'" ry="'+h*(top?.15:.28)+'" fill="'+c+'"/>';}
+ else if(top&&T.circular(p))out='<ellipse cx="'+(x+w/2)+'" cy="'+(y+h/2)+'" rx="'+w/2+'" ry="'+h/2+'" fill="'+c+'"/><ellipse cx="'+(x+w/2)+'" cy="'+(y+h/2)+'" rx="'+w*.2+'" ry="'+h*.2+'" fill="#ffffff70"/>';
+ else if(p.shape==='bottle')out='<path d="M'+(x+w*.33)+','+(y+h*.08)+' L'+(x+w*.33)+','+(y+h*.21)+' Q'+x+','+(y+h*.32)+' '+x+','+(y+h*.42)+' L'+x+','+(y+h*.95)+' Q'+(x+w*.5)+','+(y+h*1.02)+' '+(x+w)+','+(y+h*.95)+' L'+(x+w)+','+(y+h*.42)+' Q'+(x+w)+','+(y+h*.32)+' '+(x+w*.67)+','+(y+h*.21)+' L'+(x+w*.67)+','+(y+h*.08)+' Z" fill="'+c+'"/><rect x="'+(x+w*.31)+'" y="'+y+'" width="'+w*.38+'" height="'+h*.09+'" rx="2" fill="#4e6452"/>';
+ else if(p.shape==='bag')out='<path d="M'+x+','+(y+h)+' L'+(x+w*.06)+','+(y+h*.06)+' Q'+(x+w*.5)+','+(y-h*.02)+' '+(x+w*.94)+','+(y+h*.06)+' L'+(x+w)+','+(y+h)+' Z" fill="'+c+'"/><path d="M'+(x+w*.1)+','+(y+h*.1)+' H'+(x+w*.9)+'" stroke="#ffffff70"/>';
+ else if(p.shape==='cup'&&!top)out='<path d="M'+x+','+y+' H'+(x+w)+' L'+(x+w*.83)+','+(y+h)+' H'+(x+w*.17)+' Z" fill="'+c+'"/><ellipse cx="'+(x+w/2)+'" cy="'+(y+h*.03)+'" rx="'+(w*.5)+'" ry="'+(h*.06)+'" fill="#e4e3d7"/>';
+ else {out='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="'+(['can','softbox'].includes(p.shape)?Math.min(w,h)*.13:2)+'" fill="'+c+'"/>';if(p.shape==='can')out+='<ellipse cx="'+(x+w/2)+'" cy="'+(y+h*.04)+'" rx="'+(w*.48)+'" ry="'+(h*.04)+'" fill="#d1d7cc"/>';if(p.shape==='carton')out+='<path d="M'+(x+w/2)+','+y+' V'+(y+h)+'" stroke="#ead8b6" stroke-width="'+w*.06+'"/>';if(p.shape==='softbox')out+='<path d="M'+x+','+(y+h*.15)+' L'+(x+w*.13)+','+(y+h*.03)+' H'+(x+w*.88)+'" fill="none" stroke="#ffffff70" stroke-width="2"/>';}
+ if(!['round','long','leafy','fruittray'].includes(p.shape)&&!top)out+='<rect x="'+(x+w*.13)+'" y="'+(y+h*.43)+'" width="'+w*.74+'" height="'+h*.28+'" rx="2" fill="#fffbed"/>';
+ if(label)out+='<text x="'+(x+w/2)+'" y="'+(y+h*(top?.58:.63))+'" text-anchor="middle" font-size="'+Math.min(18,w*.35,h*.3)+'" fill="'+(top?'#fff':'#385142')+'" font-weight="600">'+esc(label)+'</text>';
+ return out;
+}
+function productIcon(t){const top=['long','leafy','fruittray'].includes(t.shape),h=top?t.depth:t.height,s=Math.min(62/t.width,58/h);return svg(shape(t,50-t.width*s/2,65-h*s,t.width*s,h*s,'',top),100,72);}
+function sceneArt(key,large=false){
+ let out='<ellipse cx="154" cy="181" rx="116" ry="15" fill="#e8eddf"/>';
+ const plane='<path d="M46 98 H205 L265 57 H106 Z" fill="#b0c59d" stroke="#728e62" stroke-width="2"/>';
+ if(key==='island')out+='<path d="M46 98 H205 V166 H46Z" fill="#d7d9c4"/><path d="M205 98 L265 57 V125 L205 166Z" fill="#b9c4ac"/>'+plane;
+ else if(key==='corner')out+='<path d="M55 83 H194 L248 45 V125 L194 167 H55Z" fill="#d7dfcc"/><path d="M55 83 H194 V167 H55Z" fill="#e9e9dc"/><path d="M55 95 H194 L248 57 H109Z" fill="#abc49a" stroke="#708d60" stroke-width="2"/><path d="M194 95 V167" stroke="#a2b299" stroke-width="2"/>';
+ else out+='<path d="M48 28 H205 V169 H48Z" fill="#e1e6da" stroke="#b5c2a9" stroke-width="3"/><path d="M205 28 L260 9 V140 L205 169Z" fill="#d0dac8"/><path d="M46 53 H205 L260 30" fill="none" stroke="#a0b193" stroke-width="5"/><path d="M46 145 H205 L260 122" fill="none" stroke="#a0b193" stroke-width="5"/>'+plane+(key==='endcap'?'<rect x="48" y="12" width="157" height="24" rx="3" fill="#8ca079"/><rect x="82" y="20" width="89" height="7" rx="2" fill="#dce6cf"/>':'');
+ out+='<path d="M75 92 H190 L226 68 H111Z" fill="#dcebd0" stroke="#57784a" stroke-dasharray="5 4" stroke-width="1.5"/>';
+ if(large)out+='<g fill="#516b43" font-size="12"><text x="115" y="123" text-anchor="middle">宽 ≈ '+data.space+' cm</text><text x="239" y="102" text-anchor="middle">深 '+data.depth+'</text><text x="287" y="45" text-anchor="middle">净空</text><text x="287" y="63" text-anchor="middle">'+data.height+' cm</text></g><path d="M282 80 V133 M278 85 L282 80 L286 85 M278 128 L282 133 L286 128" fill="none" stroke="#839b72"/><text x="155" y="207" text-anchor="middle" font-size="11" fill="#7d8973">绿色区域：这一层的可摆放范围</text>';
+ return svg(out,320,large?220:195,large?'陈列位置和宽深净空示意':'');
+}
+function renderOptions(){
+ document.querySelectorAll('[data-category]').forEach(b=>{b.classList.toggle('active',b.dataset.category===category);b.setAttribute('aria-pressed',b.dataset.category===category);});
+ const q=$('template-search').value,ts=T.search(q,q?'':category);
+ $('template-options').innerHTML=ts.length?ts.map(t=>'<button class="template-card '+(active().key===t.key?'selected':'')+'" data-template="'+t.key+'" aria-label="'+t.form+' '+t.name+'" aria-pressed="'+(active().key===t.key)+'">'+productIcon(t)+'<strong>'+t.form+'</strong><small>'+t.example+'</small></button>').join(''):'<p class="empty muted">暂时没有这个模板，试试相近的包装外形。</p>';
+}
+function renderEditor(){
+ const p=active(),t=T.template(p.key);data.active=p.id;
+ $('active-badge').textContent=p.id+'款 · '+t.form;
+ $('chosen').innerHTML=data.products.map(p=>'<button data-active="'+p.id+'" class="'+(p.id===data.active?'active':'')+'" aria-pressed="'+(p.id===data.active)+'"><i style="background:'+p.color+'"></i>'+p.id+' '+esc(p.name)+'</button>').join('');
+ for(const [k,id]of[['width','size-width'],['depth','size-depth'],['height','size-height']])$(id).value=Math.round(p[k]/t[k]*100);
+ $('product-name').value=p.name;$('stand').checked=p.stand;$('remove').disabled=data.products.length===1;$('add-product').disabled=data.products.length>=3;
+ $('depth-row').hidden=T.circular(t);
+ $('dimension-note').textContent=['long','leafy'].includes(t.shape)?'按平放方向调整：左右是宽，前后是长度，高度是平放后的厚度。':'数值只是约数，拖到接近实物的比例即可。';
+ $('colors').innerHTML=colors.map(c=>'<button aria-label="包装颜色 '+c+'" data-color="'+c+'" class="'+(c===p.color?'active':'')+'" style="background:'+c+'"></button>').join('');
+ renderModel();
+}
+function renderModel(){
+ const p=active(),t=T.template(p.key),s=Math.min(130/(t.width*1.5),130/(t.height*1.5));let out='<line x1="25" y1="160" x2="215" y2="160" stroke="#bbcbb0"/>'+shape({...p,shape:t.shape},120-p.width*s/2,160-p.height*s,p.width*s,p.height*s,p.id);
+ if(['long','leafy'].includes(t.shape))out+='<text x="120" y="22" text-anchor="middle" font-size="11" fill="#86917c">平放后的正面</text>';
+ $('model').innerHTML=svg(out,240,180,'商品外形随滑块调整');
+ for(const k of ['width','depth','height'])$(k+'-value').textContent='约'+T.round(p[k])+' cm';
+}
+function renderScenes(){
+ $('scene-options').innerHTML=T.scenes.map(s=>'<button class="scene-card '+(s.key===data.environment?'active':'')+'" data-scene="'+s.key+'" aria-pressed="'+(s.key===data.environment)+'">'+sceneArt(s.key)+'<strong>'+s.name+'</strong><small>'+s.hint+'</small></button>').join('');
+ $('environment-editor').hidden=!data.environment;
+ if(data.environment){const s=T.scenes.find(s=>s.key===data.environment);$('scene-title').textContent=s.name+' · 可用区域';$('scene-diagram').innerHTML=sceneArt(s.key,true);$('scene-note').textContent=s.key==='corner'?'先估算柜面中可用的一块矩形，弧形、斜边及道具占用留给现场核对。':'默认大小是演示基底。净空指台面上方到遮挡物之间的空间。';}
+ for(const [id,k,out]of[['space','space','space-value'],['scene-depth','depth','scene-depth-value'],['scene-height','height','scene-height-value']]){$(id).value=data[k];$(out).textContent='约'+data[k]+' cm';}
+}
+function motifIcon(key,p=active()){
+ const t=T.template(p.key),pp={...p,shape:t.shape},u=T.unit(pp,{motif:key,columns:2,rows:2}),top=T.motif(key).view==='top',s=Math.min(90/u.span,51/(top?u.usedDepth:u.usedHeight)),x0=(110-u.span*s)/2,base=57;
+ let out='<line x1="5" y1="59" x2="105" y2="59" stroke="#bdcbb0"/>';
+ for(const i of [...u.items].sort((a,b)=>b.y-a.y||a.z-b.z)){const x=x0+i.x*s,y=base-(top?i.y+i.bd:i.z+p.height)*s;let item=shape(pp,top?x+(i.bw-p.width)*s/2:x,y+(top?(i.bd-p.depth)*s/2:0),(top?p.width:i.bw)*s,(top?p.depth:p.height)*s,'',top);if(top&&i.angle)item='<g transform="rotate('+i.angle+' '+(x+i.bw*s/2)+' '+(y+i.bd*s/2)+')">'+item+'</g>';out+=item;}
+ return svg(out,110,65);
+}
+function draw(r){
+ if(zoom==='unit')return drawUnit();
+ const availableW=r.constrained?data.space:r.requiredWidth,availableD=r.constrained?data.depth:r.requiredDepth,availableH=r.constrained?data.height:r.requiredHeight;
+ const span=Math.max(availableW,r.requiredWidth),vertical=view==='front'?Math.max(availableH,r.requiredHeight):Math.max(availableD,r.requiredDepth),portrait=vertical>span,W=portrait?460:850,H=portrait?660:420,base=H-85,s=Math.min((W-110)/span,(H-170)/vertical),x0=(W-span*s)/2;
+ let out='<rect width="'+W+'" height="'+H+'" fill="#f7f8f2"/><text x="25" y="30" font-size="14" fill="#7b8c70">'+(view==='top'?'俯视 · 顾客在图下方':'正面 · 标签朝向顾客')+'</text><text x="'+(W-25)+'" y="30" text-anchor="end" font-size="12" fill="#89937e">'+(T.motif(data.motif).stack?'三层样式 · 支撑需现场确认':'同款成组 · 整组重复')+'</text>';
+ if(view==='top')out+='<rect x="'+x0+'" y="'+(base-availableD*s)+'" width="'+availableW*s+'" height="'+availableD*s+'" rx="5" fill="#eaf0e1" stroke="#9aac8c" stroke-width="2" stroke-dasharray="'+(r.constrained?'':'6 5')+'"/>';
+ else {if(r.constrained&&data.environment!=='island')out+='<path d="M'+x0+','+base+' V'+(base-availableH*s)+' H'+(x0+availableW*s)+' V'+base+'" fill="none" stroke="#bdc7b2" stroke-width="4"/>';out+='<rect x="'+x0+'" y="'+(base+3)+'" width="'+availableW*s+'" height="10" rx="2" fill="#839c70"/>';}
+ r.groups.forEach(g=>{const gh=view==='top'?g.usedDepth:g.usedHeight,gy=view==='top'?(g.flipY?g.y+r.rowDepth-g.usedDepth:g.y):0;out+='<rect x="'+(x0+g.x*s-3)+'" y="'+(base-gy*s-gh*s-4)+'" width="'+(g.span*s+6)+'" height="'+(gh*s+8)+'" rx="5" fill="'+(g.group%2?'#dfe9d450':'#f2ead450')+'" stroke="'+(g.category==='fresh'?'#b6c4a7':'none')+'" stroke-dasharray="4 3"/>';});
+ const items=[...r.items].sort((a,b)=>b.y-a.y||a.z-b.z);
+ items.forEach(p=>{const x=x0+p.x*s,top=view==='top',y=base-(top?p.y+p.bd:p.z+p.height)*s;let item=shape(p,top?x+(p.bw-p.width)*s/2:x,y+(top?(p.bd-p.depth)*s/2:0),(top?p.width:p.bw)*s,(top?p.depth:p.height)*s,p.id,top);if(top&&p.angle)item='<g transform="rotate('+p.angle+' '+(x+p.bw*s/2)+' '+(y+p.bd*s/2)+')">'+item+'</g>';out+=item;});
+ if(r.tooWide)out+='<line x1="'+(x0+availableW*s)+'" y1="55" x2="'+(x0+availableW*s)+'" y2="'+(base+20)+'" stroke="#bd8054" stroke-width="2" stroke-dasharray="5 5"/>';
+ r.groups.filter(g=>!g.groupRow).forEach(g=>out+='<rect x="'+(x0+(g.x+g.span/2)*s-22)+'" y="'+(base+20)+'" width="44" height="22" rx="3" fill="#fff" stroke="#dce2d3"/><text x="'+(x0+(g.x+g.span/2)*s)+'" y="'+(base+35)+'" text-anchor="middle" font-size="12" fill="#5e7650">'+g.id+'组</text>');
+ if(r.composition!=='repeat'){const cx=x0+(r.groups[0].x+r.span/2)*s;out+='<line x1="'+cx+'" x2="'+cx+'" y1="60" y2="'+(base+12)+'" stroke="#577b48" stroke-width="2" stroke-dasharray="6 6"/>';if(r.composition==='quad'&&view==='top'){const cy=base-(r.edge+r.rowDepth+r.gap/2)*s;out+='<line x1="'+x0+'" x2="'+(x0+availableW*s)+'" y1="'+cy+'" y2="'+cy+'" stroke="#577b48" stroke-width="2" stroke-dasharray="6 6"/>';}}
+ out+='<text x="'+W/2+'" y="'+(H-20)+'" text-anchor="middle" font-size="'+(portrait?9:13)+'" fill="#7b8c70">'+(!r.constrained?'未设置场地 · 示意组合方式，不判断能否放下':r.tooWide?'虚线是台面边缘，当前组合偏宽':'按参考尺寸试摆 · 商品间隔仍需现场调整')+'</text>';
+ return svg(out,W,H,view==='top'?'商品分组俯视示意':'商品分组正面示意');
+}
+function drawUnit(){
+ const p={...data.products[0],shape:T.template(data.products[0].key).shape},u=T.unit(p,data),top=view==='top',height=top?u.usedDepth:u.usedHeight,portrait=height>u.span*1.3,W=portrait?460:850,H=portrait?660:420,s=Math.min((W-170)/u.span,(H-175)/height),x0=(W-u.span*s)/2,base=H-95;
+ let out='<rect width="'+W+'" height="'+H+'" fill="#f7f8f2"/><text x="25" y="30" font-size="15" fill="#7b8c70">'+p.id+'款 · 单组细节 · '+(top?'俯视':'正面')+'</text><text x="825" y="30" text-anchor="end" font-size="13" fill="#7b8c70">同款 '+u.items.length+' 件组成一组</text>';
+ for(const i of [...u.items].sort((a,b)=>b.y-a.y||a.z-b.z)){const x=x0+i.x*s,y=base-(top?i.y+i.bd:i.z+p.height)*s;let item=shape(p,top?x+(i.bw-p.width)*s/2:x,y+(top?(i.bd-p.depth)*s/2:0),(top?p.width:i.bw)*s,(top?p.depth:p.height)*s,p.id,top);if(top&&i.angle)item='<g transform="rotate('+i.angle+' '+(x+i.bw*s/2)+' '+(y+i.bd*s/2)+')">'+item+'</g>';out+=item;}
+ const labels=data.motif==='triangle'&&top?['前排 1瓶','中排 2瓶','后排 3瓶']:data.motif==='pyramid'&&!top?['下层 3罐','中层 2罐','上层 1罐']:[];
+ labels.forEach((label,i)=>{const y=base-(top?(i*(p.depth+.8)+p.depth/2):(i*p.height+p.height/2))*s;out+='<text x="'+(x0+u.span*s+18)+'" y="'+(y+5)+'" font-size="16" fill="#758b62">'+label+'</text>';});
+ out+='<line x1="'+(x0-15)+'" x2="'+(x0+u.span*s+15)+'" y1="'+(base+13)+'" y2="'+(base+13)+'" stroke="#a7b99a" stroke-width="3"/><text x="'+W/2+'" y="'+(H-42)+'" text-anchor="middle" font-size="16" fill="#637d52">'+esc(T.motif(data.motif).summary)+'</text><text x="'+W/2+'" y="'+(H-15)+'" text-anchor="middle" font-size="'+(portrait?10:12)+'" fill="#87957c">'+(top?'顾客在图下方 · 点“看整体”查看整组重复':'点“俯视”看占地，点“看整体”看整组重复')+'</text>';
+ return svg(out,W,H,'单组摆放细节：'+T.motif(data.motif).name);
+}
+function counters(){
+ const repeatLabel=data.composition==='mirror'?'每侧每款':data.composition==='quad'?'每区每款':'每款整组重复';
+ const labels={repeat:[repeatLabel,'组'],columns:['每组横着摆','列'],rows:['每组往后摆','排']},max={columns:5,rows:4,repeat:3};
+ $('count-controls').innerHTML=Object.entries(labels).filter(([k])=>data.motif==='grid'||k==='repeat').map(([k,[label,u]])=>'<div class="count-control"><span>'+label+(k==='repeat'?'<small>不同款使用相同重复次数</small>':'')+'</span><div class="counter"><button data-count="'+k+'" data-delta="-1" aria-label="减少'+label+'" '+(data[k]===1?'disabled':'')+'>−</button><output>'+data[k]+u+'</output><button data-count="'+k+'" data-delta="1" aria-label="增加'+label+'" '+(data[k]===max[k]?'disabled':'')+'>＋</button></div></div>').join('');
+ $('order-settings').hidden=data.products.length===1;
+ $('order-options').innerHTML=Object.entries(T.patterns).map(([k,p])=>'<button data-order="'+k+'" class="'+(data.pattern===k?'active':'')+'" title="'+p.hint+'">'+p.name+'</button>').join('');
+}
+function instructionIcon(type){
+ if(type===1)return motifIcon(data.motif,data.products[0]);
+ if(type===2)return svg('<rect x="9" y="18" width="23" height="28" rx="3" fill="#b0c39b"/><text x="20" y="36" text-anchor="middle" font-size="11" fill="#fff">A</text><path d="M37 32H51 M46 27L51 32L46 37" fill="none" stroke="#8b9d7e" stroke-width="2"/><rect x="57" y="18" width="23" height="28" rx="3" fill="#b0c39b"/><rect x="86" y="18" width="23" height="28" rx="3" fill="#b0c39b"/>',120,65);
+ return svg('<rect x="18" y="12" width="80" height="32" rx="4" fill="#e5edda"/><path d="M30 22L38 30L55 15" fill="none" stroke="#789567" stroke-width="3"/><path d="M61 24H86M61 32H79" stroke="#9bad88" stroke-width="2"/><rect x="38" y="48" width="42" height="12" rx="2" fill="#c9b98c"/>',120,65);
+}
+function renderPlan(){
+ const r=T.layout(data);if(r.error){toast(r.error);return;}
+ const m=T.motif(data.motif),recommended=T.recommendMotif(data),scene=T.scenes.find(s=>s.key===data.environment);
+ $('result-context').textContent=data.products.length+'款商品 · '+(scene?scene.name+'约'+data.space+' × '+data.depth+' cm':'未设置场地，仅看组合样式');
+ $('plan-heading').textContent=m.name;
+ $('recommend-tag').textContent=recommended.key===m.key?'参考推荐':'已选摆法';
+ $('reason').textContent=recommended.key===m.key?recommended.reason:m.summary+'。先用一组试摆，再决定整组重复。';
+ $('diagram').innerHTML=draw(r);
+ $('group-sequence').innerHTML='<small>整组顺序</small>'+r.groups.map(g=>'<span><i style="background:'+g.color+'"></i>'+g.id+'</span>').join('');
+ const unitCount=r.groups[0].items.length;
+ $('counts').textContent=r.groups.length+'组 × 每组'+unitCount+'件 = '+r.total+'件'+(r.constrained?' · 参考占地约'+r.requiredWidth+' × '+r.requiredDepth+' cm':' · 件数为当前图示用量');
+ $('status').className=r.issues.length?'warn':'';
+ $('status').textContent=r.issues.length?r.issues.join(' '):r.constrained?'参考外形能放入这块区域，接下来检查实物间距、拿取和价签。':'尚未设置环境尺寸，这里只推荐组合方式；现场先摆一组看看。';
+ const fit=T.fit(data),overflow=r.constrained&&(r.requiredWidth>data.space||r.requiredDepth>data.depth||r.requiredHeight>data.height);
+ $('fit').hidden=!overflow||!fit;
+ if(overflow&&!fit)$('status').textContent+=' 当前空间放不下一组此样式，请换摆法或位置。';
+ $('stack-check').hidden=!m.stack;$('stack-confirm').checked=data.stackConfirmed;
+ document.querySelectorAll('[data-view]').forEach(b=>{b.classList.toggle('active',b.dataset.view===view);b.setAttribute('aria-pressed',b.dataset.view===view);});
+ document.querySelectorAll('[data-zoom]').forEach(b=>{b.classList.toggle('active',b.dataset.zoom===zoom);b.setAttribute('aria-pressed',b.dataset.zoom===zoom);});
+ const choices=T.available(data);$('motif-count').textContent=choices.length+'种适用';
+ $('composition-options').innerHTML=[['repeat','普通重复','▥ ▥ ▥'],['mirror','左右镜像','▥ │ ▥'],['quad','四向呼应','⊞']].map(([k,label,icon])=>'<button data-composition="'+k+'" class="'+((data.composition||'repeat')===k?'active':'')+'" aria-pressed="'+((data.composition||'repeat')===k)+'"><span aria-hidden="true">'+icon+'</span>'+label+'</button>').join('');
+ $('motif-options').innerHTML=choices.map(choice=>'<button class="motif-card '+(data.motif===choice.key?'active':'')+'" data-motif="'+choice.key+'" aria-pressed="'+(data.motif===choice.key)+'">'+motifIcon(choice.key,data.products[0])+'<span><strong>'+choice.name+'</strong><small>'+choice.summary+'</small></span></button>').join('');
+ counters();
+ const first={grid:'同款横着'+data.columns+'列、向后'+data.rows+'排，前沿排齐、间距一致。',offset:'每组3包，统一方向、统一幅度错位露角；先确认包装和底部支撑。',pinwheel:'四件首尾围成一个方形，中间保留自然空隙；每个单元的旋转方向一致。',slant:'四件均在台面平放，固定20°倾角，每件采用相同的侧移和间距。',diamond:'四件均在台面平放，固定45°倾角，中心沿直线等距排列。',texture:'每排固定“一竖一横”，下一排同序复制，前沿对齐。',triangle:'在同一台面前排1瓶、中排2瓶、后排3瓶，围绕中线对称、间距一致。',pyramid:'每组下3罐、中2罐、上1罐，沿中线对称。先确认层间承托与稳定性。'}[data.motif];
+ const texts=[['先摆一组',first],['再重复整组','按 '+r.sequence+' 的顺序重复，同一组内不混款。'],['最后整理','对应放好价签，试着拿一件、补一件，确认画面仍整齐。']];
+ $('instruction-cards').innerHTML=texts.map(([title,text],i)=>'<article class="instruction-card">'+instructionIcon(i+1)+'<b>'+String(i+1).padStart(2,'0')+' / '+title+'</b><p>'+esc(text)+'</p></article>').join('');
+ $('shape-tip').textContent=data.products.map(p=>T.template(p.key).tip).filter((s,i,a)=>a.indexOf(s)===i).join(' ');
+ if(!$('compact-status')){const b=document.createElement('button');b.id='compact-status';b.className='compact-status';b.onclick=()=>{$('toggle-notes').click();$('status').scrollIntoView({behavior:'smooth',block:'center'});};$('counts').after(b);}
+ $('compact-status').textContent=overflow?'空间不足':m.stack&&!data.stackConfirmed?'支撑待确认':!r.constrained?'未设场地':'尺寸参考';$('compact-status').classList.toggle('warn',r.issues.length>0);
+}
+function invalidate(){dirty=true;data.stackConfirmed=false;if(!T.available(data).some(m=>m.key===data.motif))data.motif='grid';}
+function refresh(){renderOptions();renderEditor();renderScenes();if(step===3)renderPlan();}
+function generate(){if(dirty){data.motif=T.recommendMotif(data).key;data.pattern=T.recommend(data).pattern;view=T.motif(data.motif).view;zoom=data.motif==='grid'?'all':'unit';dirty=false;}renderPlan();}
+function go(n){step=n;document.querySelectorAll('.page').forEach((p,i)=>p.hidden=i+1!==step);document.querySelectorAll('[data-step]').forEach(b=>{b.classList.toggle('active',+b.dataset.step===step);b.classList.toggle('done',+b.dataset.step<step);if(+b.dataset.step===step)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});$('back').hidden=step===1;$('next').hidden=step===3;$('next').textContent=step===1?'下一步：选位置 →':data.environment?'生成摆法 →':'跳过位置，看摆法 →';$('progress-note').textContent=['先选外形，再拖动大小','场地还没定，可以跳过','看一组怎么摆，再重复整组'][step-1];if(step===3)generate();else if(step===2)renderScenes();window.scrollTo({top:0,behavior:'instant'});$('title-'+step).focus({preventScroll:true});}
+function choose(key){const id=active().id;data.products[data.products.findIndex(p=>p.id===id)]=T.make(key,id);category=T.template(key).category;invalidate();refresh();}
+$('template-options').onclick=e=>{const b=e.target.closest('[data-template]');if(b)choose(b.dataset.template);};
+$('categories').onclick=e=>{const b=e.target.closest('[data-category]');if(b){category=b.dataset.category;$('template-search').value='';if(T.template(active().key).category!==category)choose(T.templates.find(t=>t.category===category).key);else renderOptions();}};
+$('template-search').oninput=renderOptions;
+$('chosen').onclick=e=>{const b=e.target.closest('[data-active]');if(b){data.active=b.dataset.active;category=T.template(active().key).category;$('template-search').value='';renderOptions();renderEditor();}};
+$('add-product').onclick=()=>{if(data.products.length>=3)return;const id='ABC'.split('').find(id=>!data.products.some(p=>p.id===id));data.products.push(T.make(active().key,id));data.active=id;if(data.products.length===2)data.repeat=2;invalidate();refresh();toast('已添加'+id+'款，请为它选择外形');};
+$('remove').onclick=()=>{if(data.products.length===1)return;data.products=data.products.filter(p=>p.id!==active().id).map((p,i)=>({...p,id:'ABC'[i]}));data.active=data.products[0].id;category=T.template(active().key).category;invalidate();refresh();};
+for(const [k,id]of[['width','size-width'],['depth','size-depth'],['height','size-height']])$(id).oninput=()=>{const p=active(),t=T.template(p.key);p[k]=T.round(t[k]*Number($(id).value)/100);if(k==='width'&&T.circular(t))p.depth=p.width;invalidate();renderModel();};
+$('product-name').onchange=e=>{active().name=e.target.value.trim()||T.template(active().key).name;renderEditor();};
+$('colors').onclick=e=>{const b=e.target.closest('[data-color]');if(b){active().color=b.dataset.color;renderEditor();}};
+$('stand').onchange=e=>{active().stand=e.target.checked;invalidate();};
+$('scene-options').onclick=e=>{const b=e.target.closest('[data-scene]');if(!b)return;const s=T.scenes.find(s=>s.key===b.dataset.scene);if(data.environment!==s.key){data.environment=s.key;data.space=s.width;data.depth=s.depth;data.height=s.height;invalidate();}renderScenes();$('next').textContent='生成摆法 →';};
+for(const [id,k]of[['space','space'],['scene-depth','depth'],['scene-height','height']])$(id).oninput=()=>{data[k]=Number($(id).value);invalidate();renderScenes();};
+$('skip-environment').onclick=()=>{if(data.environment!==null){data.environment=null;invalidate();}go(3);};
+document.querySelectorAll('[data-step]').forEach(b=>b.onclick=()=>go(+b.dataset.step));
+$('next').onclick=()=>go(step+1);$('back').onclick=()=>go(step-1);$('edit-products').onclick=()=>go(1);document.querySelector('.brand').onclick=e=>{e.preventDefault();go(1);};
+$('motif-options').onclick=e=>{const b=e.target.closest('[data-motif]');if(b){data.motif=b.dataset.motif;view=T.motif(data.motif).view;zoom=data.motif==='grid'?'all':'unit';data.stackConfirmed=false;renderPlan();$('diagram').scrollIntoView({behavior:'smooth',block:'center'});}};
+$('count-controls').onclick=e=>{const b=e.target.closest('[data-count]');if(!b)return;const k=b.dataset.count;data[k]=Math.max(1,Math.min({columns:5,rows:4,repeat:3}[k],data[k]+Number(b.dataset.delta)));data.stackConfirmed=false;zoom='all';renderPlan();};
+$('order-options').onclick=e=>{const b=e.target.closest('[data-order]');if(b){data.pattern=b.dataset.order;renderPlan();}};
+$('composition-options').onclick=e=>{const b=e.target.closest('[data-composition]');if(b){data.composition=b.dataset.composition;data.stackConfirmed=false;zoom='all';if(data.composition==='quad')view='top';renderPlan();}};
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{view=b.dataset.view;renderPlan();});
+document.querySelectorAll('[data-zoom]').forEach(b=>b.onclick=()=>{zoom=b.dataset.zoom;renderPlan();});
+$('fit').onclick=()=>{const f=T.fit(data);if(f){Object.assign(data,f);data.stackConfirmed=false;renderPlan();toast('已减少分组用量；请再按实物检查');}};
+$('stack-confirm').onchange=e=>{data.stackConfirmed=e.target.checked;renderPlan();};
+$('reset').onclick=()=>{data=T.defaults();category='packaged';view='front';dirty=true;$('template-search').value='';refresh();go(1);};
+$('help-open').onclick=()=>$('help').showModal();$('photo-open').onclick=()=>$('photos').showModal();document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>$(b.dataset.close).close());
+$('sources').innerHTML=T.templates.map(t=>{const s=T.sources[t.key];return '<article class="source"><h3>'+t.name+' <small>参考 '+t.width+' × '+t.depth+' × '+t.height+' cm</small></h3><p>'+esc(s.detail)+'</p>'+(s.url?'<a href="'+s.url+'" target="_blank" rel="noreferrer">'+esc(s.label)+'</a>':'<small>'+s.label+'</small>')+'</article>';}).join('');
+$('photo-file').onchange=e=>{const f=e.target.files[0];if(!f)return;if(!['image/jpeg','image/png','image/webp'].includes(f.type)||f.size>10*1024*1024){e.target.value='';return toast('请选择10 MB以内的JPG、PNG或WebP图片');}if(photoUrl)URL.revokeObjectURL(photoUrl);photoUrl=URL.createObjectURL(f);$('photo').src=photoUrl;$('photo').hidden=false;e.target.value='';};
+$('photo-clear').onclick=()=>{if(photoUrl)URL.revokeObjectURL(photoUrl);photoUrl='';$('photo').removeAttribute('src');$('photo').hidden=true;};
+$('print').onclick=()=>window.print();
+$('toggle-notes').onclick=()=>{const show=document.body.classList.toggle('show-notes');$('toggle-notes').textContent=show?'隐藏说明':'查看说明';$('toggle-notes').setAttribute('aria-expanded',show);};
+$('save').onclick=()=>{const a=document.createElement('a'),url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));a.href=url;a.download='美术陈列方案.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+$('import').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{if(f.size>100000)throw Error('文件过大');data=T.normalize(JSON.parse(await f.text()));category=T.template(active().key).category;view=T.motif(data.motif).view;dirty=false;$('template-search').value='';refresh();go(3);toast('已读取方案，照片仍仅留在当前页面');}catch(err){toast('读取失败：'+err.message);}finally{e.target.value='';}};
+$('fresh-icon').innerHTML=svg(shape(T.template('apple'),14,17,31,32)+shape(T.template('leafy'),45,10,39,40),100,65);
+$('packaged-icon').innerHTML=svg(shape(T.template('biscuit'),15,15,27,40)+shape(T.template('bottle'),49,3,21,53),100,65);
+refresh();go(1);
+
+
+</script>
+</body></html>
+
